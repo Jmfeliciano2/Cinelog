@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineLog — Meus Filmes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════ LOGIN PAGE ═══════════════════ -->
+  <div id="login-page">
+    <div class="login-brand">
+      <span class="logo-icon">🎬</span>
+      <h1>Cine<span>Log</span></h1>
+      <p>Sua lista de filmes assistidos</p>
+    </div>
+
+    <div class="login-card">
+      <div class="filmstrip">
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+      </div>
+
+      <div class="login-body">
+        <h2>Entrar na conta</h2>
+        <p class="subtitle">Acesse para gerenciar seus filmes</p>
+
+        <div id="login-error" class="error-msg hidden"></div>
+
+        <div class="field">
+          <label for="input-user">Usuário</label>
+          <input type="text" id="input-user" placeholder="Digite seu usuário" autocomplete="username" />
+        </div>
+
+        <div class="field">
+          <label for="input-pass">Senha</label>
+          <input type="password" id="input-pass" placeholder="Digite sua senha" autocomplete="current-password" />
+        </div>
+
+        <button class="btn-primary" id="btn-login" onclick="fazerLogin()">Entrar</button>
+      </div>
+
+      <div class="filmstrip" style="transform: scaleX(-1);">
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+        <div class="filmstrip-hole"></div><div class="filmstrip-hole"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ LIST PAGE ═══════════════════ -->
+  <div id="list-page" class="hidden">
+
+    <header class="app-header">
+      <div class="header-inner">
+        <div class="header-brand">
+          <span class="logo-icon">🎬</span>
+          <span class="brand-name">Cine<span>Log</span></span>
+        </div>
+        <button class="btn-logout" onclick="fazerLogout()">Sair</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+
+      <div class="add-section">
+        <h2>Adicionar filme</h2>
+        <div class="add-row">
+          <input type="text" id="input-novo-filme" placeholder="Nome do filme..." />
+          <div class="add-buttons">
+            <button class="btn-add btn-add-start" onclick="adicionarInicio()">+ Início</button>
+            <button class="btn-add btn-add-end"   onclick="adicionarFinal()">+ Final</button>
+          </div>
+        </div>
+        <div id="add-error" class="add-error hidden"></div>
+      </div>
+
+      <div class="stats-bar">
+        <span class="count" id="stats-count"></span>
+      </div>
+
+      <div id="movie-list"></div>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
