@@ -1,6 +1,4 @@
-/* ══════════════════════════════════
-   Reset & Base
-══════════════════════════════════ */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -31,9 +29,6 @@ html, body {
 
 .hidden { display: none !important; }
 
-/* ══════════════════════════════════
-   LOGIN PAGE
-══════════════════════════════════ */
 #login-page {
   min-height: 100vh;
   display: flex;
@@ -172,9 +167,6 @@ html, body {
 .btn-primary:hover  { background: #f9b740; }
 .btn-primary:active { transform: scale(0.98); }
 
-/* ══════════════════════════════════
-   LIST PAGE
-══════════════════════════════════ */
 #list-page {
   min-height: 100vh;
   display: flex;

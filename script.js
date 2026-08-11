@@ -1,19 +1,10 @@
-/* ═══════════════════════════════════════════════════════
-   CineLog — script.js
-═══════════════════════════════════════════════════════ */
 
-/* ─────────────────────────────────────────────
-   DADOS
-───────────────────────────────────────────── */
 var filmes = [
   "Interestelar (2014)",
   "Clube da Luta (1999)",
   "Parasita (2019)"
 ];
 
-/* ─────────────────────────────────────────────
-   LOGIN
-───────────────────────────────────────────── */
 function fazerLogin() {
   var usuario = document.getElementById("input-user").value;
   var senha   = document.getElementById("input-pass").value;
@@ -24,7 +15,7 @@ function fazerLogin() {
     return;
   }
 
-  if (usuario === "aluno" && senha === "fiap2025") {
+  if (usuario === "aluno" && senha === "fiap123") {
     erro.classList.add("hidden");
     document.getElementById("login-page").classList.add("hidden");
     document.getElementById("list-page").classList.remove("hidden");
@@ -121,10 +112,6 @@ function adicionarInicio() {
   filmes.unshift(titulo);
   renderizarLista();
 }
-
-/* ─────────────────────────────────────────────
-   EDITAR
-───────────────────────────────────────────── */
 function iniciarEdicao(indice) {
   var item       = document.getElementById("item-" + indice);
   var valorAtual = filmes[indice];
@@ -158,17 +145,10 @@ function cancelarEdicao(indice) {
   renderizarLista();
 }
 
-/* ─────────────────────────────────────────────
-   REMOVER
-───────────────────────────────────────────── */
 function removerItem(indice) {
   filmes.splice(indice, 1);
   renderizarLista();
 }
-
-/* ─────────────────────────────────────────────
-   TECLA ENTER
-───────────────────────────────────────────── */
 document.getElementById("input-pass").addEventListener("keydown", function(e) {
   if (e.key === "Enter") fazerLogin();
 });
